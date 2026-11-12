@@ -53,7 +53,7 @@ Every UI ships professional and actually looks good, the kind of thing that does
 - **Low-level:** process memory, pointer chains, AOB scanning, heap/stack analysis, Windows internals (PEB, TEB, EPROCESS, KTHREAD), WinAPI/NTAPI, ASLR/DEP/CFG.
 - **RE:** x86/x64, signature scanning, vtables, PE/COFF, static and dynamic analysis, and hooking (detours, IAT/EAT, VMT, inline with relocations, exception-based).
 - **Languages:** C/C++, MASM/NASM, Python, Lua/Luau.
-- **Game modding:** client-side scripting, executor scripts, Roblox UI libraries, game-state inspection.
+- **Game modding:** client-side scripting, Roblox executor scripts (Lua/Luau), UI libraries (Drawing, Kavo, Rayfield), remote spies and decompilers, game-state inspection. See `wren.md` for context.
 - **Tools:** x64dbg, IDA Pro, Ghidra, Cheat Engine, WinDbg, System Informer, ReClass.NET, CFF Explorer, PE-bear.
 
 ## Output
