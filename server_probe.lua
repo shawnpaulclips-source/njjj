@@ -550,8 +550,13 @@ UserInputService.InputBegan:Connect(function(input, gpe)
 end)
 
 -- Safety net: if the script errors or the session ends, still flush what we
--- learned so a failed run advances the next one.
-game:BindToClose and pcall(game.BindToClose, game, function() flushKB(); dumpAll() end)
+-- learned so a failed run advances the next one. (BindToClose is server-side;
+-- guard it so the client executor doesn't choke on it.)
+pcall(function()
+    if typeof(game.BindToClose) == "function" then
+        game:BindToClose(function() flushKB(); dumpAll() end)
+    end
+end)
 task.spawn(function()
     while true do task.wait(20); flushKB() end -- periodic autosave of learnings
 end)
